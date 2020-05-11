@@ -1,17 +1,17 @@
 
-###Step1
+### Step1
 pip install -r requirements.txt
 
-###Step2
+### Step2
 Modify "WORKING_PATH" variable in file feature_extraction.py to your current working directory (go to your current working dir, use "pwd" command)
 
-###Step3
+### Step3
 python train.py -> best optimal score (no need, already trained to the maximum score)
 
-###Step4
+### Step4
 Enable Chromium Extension Developer Mode, Load Unpack -> Extension folder
 
-###Step5
+### Step5
 python app.py (run the backend server)
 
 
