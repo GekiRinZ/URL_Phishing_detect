@@ -29,6 +29,7 @@ def check():
 	headers = {'content-type': 'application/json'}
 	r = requests.post(google_api_url, data=json.dumps(data), headers=headers)
 	#content = r.text
+	print (r.text)
 	dictdump = json.loads(r.text)
 	print(dictdump)
 	#a=	content.find('matches')

@@ -20,7 +20,7 @@ import sys
 from patterns import *
 
 LOCALHOST_PATH = "/home/iznogoud/Desktop/" #place ur path here
-DIRECTORY_NAME = "URL_Phishing_detect" #Folder
+DIRECTORY_NAME = "URL_Phishing_Detect" #Folder
 
 
 def having_ip_address(url):
@@ -89,7 +89,7 @@ def favicon(wiki, soup, domain):
     for head in soup.find_all('head'):
         for head.link in soup.find_all('link', href=True):
             dots = [x.start() for x in re.finditer(r'\.', head.link['href'])]
-            return 1 if wiki in head.link['href'] or len(dots) == 1 or domain in head.link['href'] else -1
+            return 1 if wiki in head.link['href'] or len(dots) == 1 or domain in head.link['href'] else 1
     return 1
 
 
@@ -335,11 +335,12 @@ def main(url,html):
     status.append(google_index(url))
     status.append(statistical_report(url, hostname))
 
-    # print('\n1. Having IP address\n2. URL Length\n3. URL Shortening service\n4. Having @ symbol\n'
-    #       '5. Having double slash\n6. Having dash symbol(Prefix Suffix)\n7. Having multiple subdomains\n'
-    #       '8. SSL Final State\n8. Domain Registration Length\n9. Favicon\n10. HTTP or HTTPS token in domain name\n'
-    #       '11. Request URL\n12. URL of Anchor\n13. Links in tags\n14. SFH\n15. Submitting to email\n16. Abnormal URL\n'
-    #       '17. IFrame\n18. Age of Domain\n19. DNS Record\n20. Web Traffic\n21. Google Index\n22. Statistical Reports\n')
+    print('\n1. Having IP address\n2. URL Length\n3. URL Shortening service\n4. Having @ symbol\n'
+           '5. Having double slash\n6. Having dash symbol(Prefix Suffix)\n7. Having multiple subdomains\n'
+           '8. SSL Final State\n8. Domain Registration Length\n9. Favicon\n10. HTTP or HTTPS token in domain name\n'
+           '11. Request URL\n12. URL of Anchor\n13. Links in tags\n14. SFH\n15. Submitting to email\n16. Abnormal URL\n'
+           '17. IFrame\n18. Age of Domain\n19. DNS Record\n20. Web Traffic\n21. Google Index\n22. Statistical Reports\n')
+    print("Important features:" + "\nFeature 11:" + str(status[10]))
     print(status)
     return status
 
