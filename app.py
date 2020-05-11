@@ -30,7 +30,7 @@ def check():
 	r = requests.post(google_api_url, data=json.dumps(data), headers=headers)
 	#content = r.text
 	dictdump = json.loads(r.text)
-	print(type(content))
+	print(dictdump)
 	#a=	content.find('matches')
 	#print str(a) + content
 	if 'matches' in dictdump:
@@ -38,9 +38,7 @@ def check():
 	else:
 		req2 = urllib2.Request(url, headers={ 'User-Agent': 'Mozilla/5.0' })
 		html = urllib2.urlopen(req2).read()
-		print(html)
 		result = get_prediction_from_url(url,html)
-		print result
 		if (result == 1):
 			return "Safe"
 		elif (result	== -1):

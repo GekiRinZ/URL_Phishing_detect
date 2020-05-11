@@ -4,9 +4,9 @@ scikit-learn
 beautifulsoup4
 whois
 google
-urllib2
+urllib3
 requests
 flask
-re
+#re
 
 
