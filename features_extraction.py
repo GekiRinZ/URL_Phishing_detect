@@ -19,8 +19,7 @@ import sys
 
 from patterns import *
 
-LOCALHOST_PATH = "/home/iznogoud/Desktop/" #place ur path here
-DIRECTORY_NAME = "URL_Phishing_Detect" #Folder
+WORKING_PATH = "/home/iznogoud/Desktop/URL_Phishing_Detect" #place ur path here
 
 
 def having_ip_address(url):
